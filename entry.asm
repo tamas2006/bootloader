@@ -11,6 +11,10 @@ _start:
 
 keyboard_isr:
     pusha
-    call keyboard_handler
+
+    mov al, 0x20
+    out 0x20, al
+
     popa
-    iret
+    
+    

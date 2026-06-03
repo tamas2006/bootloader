@@ -22,7 +22,10 @@ static const char sc_upper[] = {
 static int shift = 0;
 static int caps  = 0;
 
-void keyboard_handler() {
+void keyboard_handler()  {
+
+    vga_putchar('*');
+
     uint8_t sc = inb(0x60);
 
     if (sc == 0xE0) { outb(PIC1_CMD, PIC_EOI); return; }
